@@ -6,6 +6,10 @@
 <title>If you're burned out, watch this</title>
 <meta name="description" content="How we build founders a business that isn't founder-dependent.">
 
+<!-- Warm up the Loom connection so the video starts faster on click -->
+<link rel="preconnect" href="https://www.loom.com">
+<link rel="preconnect" href="https://cdn.loom.com">
+
 <!-- ============================================================
      EDIT POINTS ARE MARKED  << EDIT >>.  Search the file for it.
      Everything else can be left alone.
@@ -36,7 +40,7 @@
     font-family:-apple-system,"Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
-    padding:0 22px;
+    padding:0 clamp(20px,4vw,36px);
   }
 
   .serif{
@@ -44,9 +48,9 @@
   }
 
   .wrap{
-    max-width:660px;
+    max-width:720px;
     margin:0 auto;
-    padding:38px 0 84px;
+    padding:clamp(34px,5vw,72px) 0 96px;
   }
 
   /* masthead */
@@ -85,11 +89,15 @@
     color:var(--brass);
     font-weight:600;
     margin-bottom:26px;
+    text-align:center;
+  }
+  @media (max-width:600px){
+    .eyebrow{text-align:left;letter-spacing:0.18em;}
   }
   h1{
     font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
     font-weight:600;
-    font-size:clamp(1.9rem,5.4vw,2.9rem);
+    font-size:clamp(1.9rem,5.2vw,3.2rem);
     line-height:1.16;
     letter-spacing:-0.01em;
     margin-bottom:24px;
@@ -171,8 +179,8 @@
   }
   .apply p{color:var(--bone-soft);max-width:40em;margin-bottom:30px;}
   .form-card{
-    background:#F1ECE0;   /* light card so the form stays readable */
-    padding:8px 12px;
+    background:transparent;   /* form sits on the dark page; your Tally text is light, so it reads here */
+    padding:0;
   }
   .form-card iframe{width:100%;border:0;min-height:480px;display:block;}
 
@@ -187,6 +195,13 @@
   @media (prefers-reduced-motion:no-preference){
     .play,.cta{transition:transform .2s ease,background .2s ease,color .2s ease;}
     .trigger:hover .play{transform:scale(1.05);}
+  }
+
+  /* more presence on large screens */
+  @media (min-width:1000px){
+    .wrap{max-width:760px;}
+    h1{font-size:3.4rem;}
+    figure.video{margin:64px 0 18px;}
   }
 </style>
 </head>
@@ -204,7 +219,12 @@
 
     <figure class="video">
       <div class="frame">
-        <button class="trigger" id="player" data-loom-id="ed2326d7388a40aaac61f625a056b220" aria-label="Play the video">
+        <!-- << EDIT (optional) >> preview frame. Defaults to your Loom's first frame.
+             If it looks blank or black, set a thumbnail frame inside Loom, or replace the URL
+             in background-image below with any image URL you like. -->
+        <button class="trigger" id="player" data-loom-id="ed2326d7388a40aaac61f625a056b220"
+                style="background-image:url('https://cdn.loom.com/sessions/thumbnails/ed2326d7388a40aaac61f625a056b220-00001.jpg')"
+                aria-label="Play the video">
           <span class="play" aria-hidden="true">
             <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 11.27a2 2 0 0 1 0 3.46L3 25.12A2 2 0 0 1 0 23.39V2.6A2 2 0 0 1 3 .88L21 11.27Z" fill="#EDE7D9"/>
