@@ -227,6 +227,10 @@
 <!-- Tally: loads the embedded application form (lazily, via data-tally-src). -->
 <script async src="https://tally.so/widgets/embed.js"></script>
 
-<!-- ANALYTICS: paste your Vercel Web Analytics (or other) script here. -->
+<!-- Vercel Web Analytics (counts visitors). Starts working once you enable Web Analytics in the Vercel dashboard. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
