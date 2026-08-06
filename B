@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>If you're burned out, watch this</title>
+<meta name="description" content="How we build founders a business that isn't founder-dependent.">
+
+<!-- Warm up the Loom connection so the player starts a little faster on click -->
+<link rel="preconnect" href="https://www.loom.com">
+<link rel="preconnect" href="https://cdn.loom.com">
+
+<!-- ============================================================
+     EDIT POINTS ARE MARKED  << EDIT >>.  Search the file for it.
+     Everything else can be left alone.
+     Paste your analytics script just above </body> (see ANALYTICS).
+     ============================================================ -->
+
+<style>
+  :root{
+    --bg:#15140F;          /* deep warm charcoal */
+    --bg-raise:#1E1C16;    /* raised panels */
+    --bone:#EDE7D9;        /* primary text */
+    --bone-soft:#A79E8B;   /* secondary text */
+    --brass:#C6A96E;       /* restrained accent, used sparingly */
+    --line:rgba(198,169,110,0.28);
+    --line-faint:rgba(237,231,217,0.12);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+
+  @media (prefers-reduced-motion:no-preference){
+    html{scroll-behavior:smooth;}
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--bone);
+    font-family:-apple-system,"Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding:0 clamp(20px,4vw,36px);
+  }
+
+  .serif{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  }
+
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:clamp(34px,5vw,72px) 0 96px;
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding-bottom:26px;
+    margin-bottom:52px;
+    border-bottom:1px solid var(--line);
+  }
+  .masthead .name{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-weight:700;
+    font-size:1.08rem;
+    letter-spacing:0.04em;
+  }
+  .mark{
+    width:8px;height:8px;
+    background:var(--brass);
+    transform:rotate(45deg);
+    flex:0 0 auto;
+  }
+  .masthead .desc{
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.2em;
+    color:var(--bone-soft);
+  }
+
+  /* headline */
+  .eyebrow{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    color:var(--brass);
+    font-weight:600;
+    margin-bottom:26px;
+    text-align:center;
+  }
+  @media (max-width:600px){
+    .eyebrow,h1,.lede{text-align:left;}
+    .eyebrow{letter-spacing:0.18em;}
+  }
+  h1{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-weight:600;
+    font-size:clamp(1.9rem,5.2vw,3.2rem);
+    line-height:1.16;
+    letter-spacing:-0.01em;
+    margin-bottom:24px;
+    text-align:center;
+  }
+  h1 em{font-style:italic;color:var(--brass);}
+  .lede{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-style:italic;
+    font-size:1.22rem;
+    color:var(--bone-soft);
+    text-align:center;
+  }
+
+  /* video figure */
+  figure.video{margin:52px 0 16px;}
+  .frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    border:1px solid var(--line);
+    background:var(--bg-raise);
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+  }
+  figcaption{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--bone-soft);
+    padding:14px 0 26px;
+    border-bottom:1px solid var(--line-faint);
+  }
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+  /* primary CTA */
+  .cta-block{margin-top:40px;text-align:center;}
+  .cta{
+    display:inline-block;
+    background:var(--bone);
+    color:var(--bg);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.98rem;
+    letter-spacing:0.02em;
+    padding:18px 44px;
+    border:1px solid var(--bone);
+  }
+  .cta:hover{background:transparent;color:var(--bone);}
+  .reassure{font-size:0.86rem;color:var(--bone-soft);margin-top:16px;}
+
+  /* application section */
+  .apply{margin-top:86px;padding-top:44px;border-top:1px solid var(--line);}
+  .step{
+    font-size:0.72rem;text-transform:uppercase;letter-spacing:0.22em;
+    color:var(--brass);font-weight:600;margin-bottom:16px;
+  }
+  .apply h2{
+    font-family:"Hoefler Text","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-weight:600;font-size:clamp(1.5rem,4vw,2rem);line-height:1.2;margin-bottom:30px;
+  }
+  .apply p{color:var(--bone-soft);max-width:40em;margin-bottom:30px;}
+  .form-card{
+    background:transparent;   /* form sits on the dark page; your Tally text is light, so it reads here */
+    padding:0;
+  }
+  .form-card iframe{width:100%;border:0;min-height:480px;display:block;}
+
+  footer{
+    margin-top:72px;padding-top:22px;border-top:1px solid var(--line-faint);
+    font-size:0.74rem;color:var(--bone-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  a:focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+  @media (prefers-reduced-motion:no-preference){
+    .cta{transition:background .2s ease,color .2s ease;}
+  }
+
+  /* more presence on large screens */
+  @media (min-width:1000px){
+    .wrap{max-width:900px;}
+    h1{font-size:3.4rem;}
+    figure.video{margin:64px 0 18px;}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- << EDIT >> selective one-liner -->
+    <p class="eyebrow">If you&rsquo;re burned out, watch this</p>
+
+    <!-- << EDIT >> the headline (your offer) -->
+    <h1>How we help you build a business that is <em>not linked to your content&rsquo;s performance</em> to generate revenue.</h1>
+
+    <!-- << EDIT >> supporting line -->
+    <p class="lede">While maintaining high profit margins and zero burnout.</p>
+
+    <figure class="video">
+      <div class="frame" style="background-image:url('https://cdn.loom.com/sessions/thumbnails/066d807b10d2418aa4ed7888d8939020-cfc683d2c341f218-full-play.gif#t=0.1')">
+        <iframe src="https://www.loom.com/embed/066d807b10d2418aa4ed7888d8939020?hideEmbedTopBar=true"
+                title="Watch this" frameborder="0"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <figcaption>Watch &mdash; 4 minutes</figcaption>
+    </figure>
+
+    <div class="cta-block">
+      <a class="cta" href="#apply">See if we&rsquo;re a fit</a>
+    </div>
+
+    <section class="apply" id="apply">
+      <p class="step">Step two</p>
+      <h2>See if you&rsquo;re a fit.</h2>
+      <div class="form-card">
+        <iframe data-tally-src="https://tally.so/embed/GxVLW2?hideTitle=1&alignLeft=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy" width="100%" height="480" title="Application"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+<!-- Tally: loads the embedded application form (lazily, via data-tally-src). -->
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<!-- Vercel Web Analytics (counts visitors). Starts working once you enable Web Analytics in the Vercel dashboard. -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
